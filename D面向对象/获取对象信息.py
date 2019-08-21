@@ -27,7 +27,7 @@ print(type(abs))
 
 animal = Animal()
 print(type(animal))
-# <class '面向对象.继承与多态.Animal'>
+# <class 'D面向对象.继承与多态.Animal'>
 
 # types模块中定义了常量
 print(type(123) == type('123'))

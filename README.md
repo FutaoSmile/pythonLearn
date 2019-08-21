@@ -464,4 +464,169 @@ print(list(sorted(L, key=lambda x: str(x[0]).lower())))
 print(list(sorted(L, key=lambda x: x[1])))
 
 ```
+### 面向对象
+* 类与实例与访问限制
+```python
+# 定义一个class，继承自object，（所有的类都最终继承object父类）
+class Student(object):
+    # 构造方法
+    def __init__(self, name: str, score: int):
+        # public属性
+        self.name = name
+        # 私有属性,只能在类的内部被访问，无法从外部访问
+        self.__score = score
 
+    # 成员函数
+    def print_score(self):
+        print('name=', self.name, ',score=', self.__score)
+
+    # 私有属性的getter访问器
+    def get_score(self):
+        return self.__score
+
+    # 私有属性的setter
+    def set_score(self, score: int):
+        if score < 0:
+            raise ValueError('score不能小于0')
+        self.__score = score
+
+
+# 在py中_x表示外部虽然可以直接访问，但是不应该直接访问的变量，这是约定
+
+s1 = Student('futao', 100)
+s1.print_score()
+
+s2 = Student('lizi', 92)
+s2.print_score()
+```
+
+* 继承与多态
+```python
+class Animal(object):
+    def run(self):
+        print('Animal is running...')
+
+
+class Dog(Animal):
+    def wang(self):
+        print('wang wang wang...')
+
+    def run(self):
+        print('Dog is running...')
+
+
+class Cat(Animal):
+    def eat(self):
+        print('eat eat eat...')
+
+    def run(self):
+        print('Cat is running...')
+
+
+def run(m_object):
+    m_object.run()
+    pass
+
+
+a1 = Animal()
+a1.run()
+
+d1 = Dog()
+d1.run()
+d1.wang()
+
+d2 = Dog()
+d2.run()
+d2.wang()
+
+c1 = Cat()
+c1.run()
+c1.eat()
+
+c2 = Cat()
+c2.run()
+c2.eat()
+
+print('-----------')
+run(a1)
+run(d1)
+run(c1)
+
+```
+
+* 获取对象信息
+```python
+import types
+
+from 面向对象.类与实例与访问限制 import Student
+from 面向对象.继承与多态 import Animal
+
+### type函数返回对应的Class类型
+
+print(type(123))
+print(type(12.3))
+print(type('123'))
+print(type([1, 2, 3]))
+print(type((1, 2, 3)))
+print(type({1, 2, 3, 1}))
+print(type({1: 2, 2: 3, 3: 23, 1: 123}))
+
+# <class 'int'>
+# <class 'float'>
+# <class 'str'>
+# <class 'list'>
+# <class 'tuple'>
+# <class 'set'>
+# <class 'dict'>
+
+print(type(abs))
+
+# <class 'builtin_function_or_method'>
+
+animal = Animal()
+print(type(animal))
+# <class '面向对象.继承与多态.Animal'>
+
+# types模块中定义了常量
+print(type(123) == type('123'))
+
+# 注意：abs属于内置函数types.BuiltinFunctionType
+print(type(abs) == types.BuiltinFunctionType)
+print(type(abs) == types.FunctionType)
+
+### isinstance()函数,判断的是一个对象是否是该类型本身，或者位于该类型的父继承链上。
+### 如果要获得一个对象的所有属性和方法，可以使用dir()函数，它返回一个包含字符串的list，比如，获得一个str对象的所有属性和方法：
+s1 = Student('taoGe', 18)
+print(s1.__dir__())
+
+
+>>> hasattr(obj, 'x') # 有属性'x'吗？
+True
+>>> obj.x
+9
+>>> hasattr(obj, 'y') # 有属性'y'吗？
+False
+>>> setattr(obj, 'y', 19) # 设置一个属性'y'
+>>> hasattr(obj, 'y') # 有属性'y'吗？
+True
+>>> getattr(obj, 'y') # 获取属性'y'
+19
+>>> obj.y # 获取属性'y'
+19
+
+如果试图获取不存在的属性，会抛出AttributeError的错误
+
+>>> getattr(obj, 'z', 404) # 获取属性'z'，如果不存在，返回默认值404
+
+也可以获得对象的方法：
+
+>>> hasattr(obj, 'power') # 有属性'power'吗？
+True
+>>> getattr(obj, 'power') # 获取属性'power'
+<bound method MyObject.power of <__main__.MyObject object at 0x10077a6a0>>
+>>> fn = getattr(obj, 'power') # 获取属性'power'并赋值到变量fn
+>>> fn # fn指向obj.power
+<bound method MyObject.power of <__main__.MyObject object at 0x10077a6a0>>
+>>> fn() # 调用fn()与调用obj.power()是一样的
+81
+```

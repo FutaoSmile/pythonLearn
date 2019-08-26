@@ -881,3 +881,79 @@ print(UserStatus.Stop.description)
 print(UserStatus.Stop.value)
 
 ```
+
+### 错误调试与测试
+* 捕获异常
+```python
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+try:
+    a = 0 / int(input('请输入一个数字'))
+# 可同时捕获多种类型的异常
+except ZeroDivisionError as ze:
+    print('发生除零异常', ze)
+    logging.exception(ze, '发生除零异常')
+# 可同时捕获多种类型的异常
+except ValueError as ve:
+    print('发生整型转换异常', ve)
+    logging.exception(ve, '发生整型转换异常')
+# 没有发生异常
+else:
+    print('没有发生异常,good job')
+    logging.info('没有发生异常,good job')
+finally:
+    print('我是必须要输出的内容')
+    logging.info('我是必须要输出的内容')
+
+# 错误类型全部继承自BaseException类
+# 如果错误没有被捕获，它就会一直往上抛，最后被Python解释器捕获，打印一个错误信息，然后程序退出
+# 我们从上往下可以看到整个错误的调用函数链
+
+```
+
+* 抛出异常
+> 通过`raise`关键字抛出异常
+```python
+# 通过raise关键字，抛出异常
+raise ValueError('发生了异常，哥们')
+
+```
+
+* 单元测试
+    * 编写单元测试时，我们需要编写一个测试类，从unittest.TestCase继承。
+    * 以test开头的方法就是测试方法，不以test开头的方法不被认为是测试方法，测试的时候不会被执行
+```python
+import unittest
+
+from D面向对象.实例属性与类属性 import Student
+from 错误调试和测试 import 错误处理
+
+
+class TestStudent(unittest.TestCase):
+    def test_init(self):
+        s1 = Student('老司机')
+        self.assertEqual(s1.s_name, '老司机')
+        self.assertTrue(True, True)
+
+    def test_错误处理(self):
+        错误处理
+        with self.assertRaises(ZeroDivisionError):
+            print('确实发生了异常，测试通过')
+```
+    * 可以在单元测试中编写两个特殊的setUp()和tearDown()方法。这两个方法会分别在每调用一个测试方法的前后分别被执行。
+```python
+    def setUp(self) -> None:
+        print('测试之前我必运行')
+
+    def tearDown(self) -> None:
+        print('测试完成之后我必运行')
+```
+
+
+
+
+## todo
+* pydoc
+* 代码注释规范

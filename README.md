@@ -824,3 +824,29 @@ class bird(Animal,Fly):
     print(c1.gender)
     
   ```                                                                                                                                                                                                                                                                                                                                                                  
+  * `__call__`
+  ```python
+   # 在类中定义`__call__`方法
+   def __call__(self, *args, **kwargs):
+        print('you call me ', self.age)
+  
+   # 使用
+   c1 = Chain()
+   # 直接调用对象方法
+   c1()
+
+  # 怎么判断一个变量是对象还是函数呢？其实，更多的时候，我们需要判断一个对象是否能被调用，
+  # 能被调用的对象就是一个Callable对象，比如函数和我们上面定义的带有__call__()的类实例
+    >>> callable(Student())
+    True
+    >>> callable(max)
+    True
+    >>> callable([1, 2, 3])
+    False
+    >>> callable(None)
+    False
+    >>> callable('str')
+    False
+  通过callable()函数，我们就可以判断一个对象是否是“可调用”对象。
+
+  ```

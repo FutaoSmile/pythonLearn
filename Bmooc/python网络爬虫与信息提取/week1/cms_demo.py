@@ -1,5 +1,5 @@
 import json
-
+import time
 import requests
 import logging
 
@@ -7,6 +7,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 def req_api(method, path, headers_param, **param):
+    start_time = time.time()
     url = 'http://localhost:9701/service/v1/portal' + path
     try:
         resp = requests.request(method, url, json=param, headers=headers_param, timeout=30)
@@ -17,7 +18,7 @@ def req_api(method, path, headers_param, **param):
         logging.error("请求失败: %s", e)
         return "请求失败咯"
     finally:
-        logging.info("请求地址:%s", resp.url)
+        logging.info("请求地址:%s，请求耗时: %s", resp.url, time.time() - start_time)
 
 
 headers = {'X-Tenant-Id': 'snpas', 'Content-Type': 'application/json'}

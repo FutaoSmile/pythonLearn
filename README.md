@@ -661,14 +661,15 @@ print(s1.score)
 ```
 ### 面向对象高级编程
 * 使用__slots__
+
 ```python
-from D面向对象.实例属性与类属性 import Student
+from A基础知识.D面向对象.实例属性与类属性 import Student
 
 s1 = Student('老司机')
 
 
 def didi():
-    print('GuaGuaGua...')
+  print('GuaGuaGua...')
 
 
 # 给实例增加一个方法
@@ -685,7 +686,7 @@ s2 = Student('公交车司机')
 # 为了给所有实例都绑定方法->则将该方法绑定到class上，动态得给class增加一个方法
 # 给class绑定方法与给实例绑定方法有一点极为不同的地方是，给class绑定的方法一定要有一个self形参，否则会报错
 def didi2(self):
-    print("Gua2...")
+  print("Gua2...")
 
 
 Student.gua = didi2
@@ -697,7 +698,7 @@ s2.gua()
 # 为了达到限制的目的，Python允许在定义class的时候，定义一个特殊的__slots__变量，来限制该class实例能添加的属性：
 # 使用__slots__要注意，__slots__定义的属性仅对当前类实例起作用，对继承的子类是不起作用的：
 class Student(object):
-    __slots__ = ('name', 'age')  # 用tuple定义允许绑定的属性名称
+  __slots__ = ('name', 'age')  # 用tuple定义允许绑定的属性名称
 
 # >>> s = Student() # 创建新的实例
 # >>> s.name = 'Michael' # 绑定属性'name'
@@ -924,23 +925,24 @@ raise ValueError('发生了异常，哥们')
 * 单元测试
     * 编写单元测试时，我们需要编写一个测试类，从unittest.TestCase继承。
     * 以test开头的方法就是测试方法，不以test开头的方法不被认为是测试方法，测试的时候不会被执行
+
 ```python
 import unittest
 
-from D面向对象.实例属性与类属性 import Student
-from 错误调试和测试 import 错误处理
+from A基础知识.D面向对象.实例属性与类属性 import Student
+from A基础知识.错误调试和测试 import 错误处理
 
 
 class TestStudent(unittest.TestCase):
-    def test_init(self):
-        s1 = Student('老司机')
-        self.assertEqual(s1.s_name, '老司机')
-        self.assertTrue(True, True)
+  def test_init(self):
+    s1 = Student('老司机')
+    self.assertEqual(s1.s_name, '老司机')
+    self.assertTrue(True, True)
 
-    def test_错误处理(self):
-        错误处理
-        with self.assertRaises(ZeroDivisionError):
-            print('确实发生了异常，测试通过')
+  def test_错误处理(self):
+    错误处理
+    with self.assertRaises(ZeroDivisionError):
+      print('确实发生了异常，测试通过')
 ```
     * 可以在单元测试中编写两个特殊的setUp()和tearDown()方法。这两个方法会分别在每调用一个测试方法的前后分别被执行。
 ```python

@@ -1,6 +1,6 @@
 import unittest
 
-from D面向对象.实例属性与类属性 import Student
+from A基础知识.D面向对象.实例属性与类属性 import Student
 # from 错误调试和测试 import 错误处理
 
 

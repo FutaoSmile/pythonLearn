@@ -1,4 +1,4 @@
-from D面向对象.实例属性与类属性 import Student
+from A基础知识.D面向对象.实例属性与类属性 import Student
 
 
 class Hello(object):

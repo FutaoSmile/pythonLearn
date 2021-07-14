@@ -4,6 +4,7 @@
     <list default="true" id="f4f10b67-4268-4ad3-8834-348f378d5d3e" name="Default Changelist" comment="元类，动态生成一个class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bmooc/python网络爬虫与信息提取/week1/cms_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bmooc/python网络爬虫与信息提取/week1/cms_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bmooc/python网络爬虫与信息提取/week1/request_.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bmooc/python网络爬虫与信息提取/week1/request_.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +59,7 @@
       <recent name="$PROJECT_DIR$/基础" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.cms_demo">
+  <component name="RunManager" selected="Python.request_">
     <configuration name="错误处理" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonLearn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -261,8 +262,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.cms_demo" />
         <item itemvalue="Python.request_" />
+        <item itemvalue="Python.cms_demo" />
         <item itemvalue="Python.错误处理" />
         <item itemvalue="Python tests.Unittests for 单元测试.TestStudent.test_init" />
         <item itemvalue="Python tests.Unittests for 单元测试.TestStudent" />
@@ -285,7 +286,8 @@
       <workItem from="1566347884386" duration="4493000" />
       <workItem from="1566458041292" duration="1266000" />
       <workItem from="1566781802569" duration="12038000" />
-      <workItem from="1626227245237" duration="6651000" />
+      <workItem from="1626227245237" duration="7580000" />
+      <workItem from="1626243805582" duration="3841000" />
     </task>
     <task id="LOCAL-00001" summary="...">
       <created>1566225941321</created>
@@ -385,9 +387,9 @@
     <SUITE FILE_PATH="coverage/pythonLearn$Unittests_for__TestStudent_test_init.coverage" NAME="Unittests for 单元测试.TestStudent.test_init Coverage Results" MODIFIED="1566805351629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/错误调试和测试" />
     <SUITE FILE_PATH="coverage/pythonLearn$_property.coverage" NAME="使用@property Coverage Results" MODIFIED="1566782935863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/E面向对象高级编程" />
     <SUITE FILE_PATH="coverage/pythonLearn$Unittests_in__py.coverage" NAME="Unittests in 单元测试.py Coverage Results" MODIFIED="1566805334105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/错误调试和测试" />
-    <SUITE FILE_PATH="coverage/pythonLearn$request_.coverage" NAME="request_ Coverage Results" MODIFIED="1626230749364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bmooc/python网络爬虫与信息提取/week1" />
+    <SUITE FILE_PATH="coverage/pythonLearn$request_.coverage" NAME="request_ Coverage Results" MODIFIED="1626247815960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bmooc/python网络爬虫与信息提取/week1" />
     <SUITE FILE_PATH="coverage/pythonLearn$__slots_.coverage" NAME="使用__slots_ Coverage Results" MODIFIED="1566354875248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/E面向对象高级编程" />
-    <SUITE FILE_PATH="coverage/pythonLearn$cms_demo.coverage" NAME="cms_demo Coverage Results" MODIFIED="1626233278366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bmooc/python网络爬虫与信息提取/week1" />
+    <SUITE FILE_PATH="coverage/pythonLearn$cms_demo.coverage" NAME="cms_demo Coverage Results" MODIFIED="1626234634508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bmooc/python网络爬虫与信息提取/week1" />
     <SUITE FILE_PATH="coverage/pythonLearn$.coverage" NAME="错误处理 Coverage Results" MODIFIED="1626227961274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A基础知识/错误调试和测试" />
     <SUITE FILE_PATH="coverage/pythonLearn$1.coverage" NAME="1 Coverage Results" MODIFIED="1626227344879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/A基础知识/A基础" />
     <SUITE FILE_PATH="coverage/python$main.coverage" NAME="main Coverage Results" MODIFIED="1566225401954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

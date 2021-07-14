@@ -1,6 +1,7 @@
 # 导入库
 import requests
 import logging
+import os
 
 logging.basicConfig(level=logging.INFO)
 
@@ -40,6 +41,26 @@ def getHtmlText(url, param, body):
         logging.error("请求失败: %s", e)
         raise Exception("请求失败")
 
+
+def download(url):
+    response = requests.get(url)
+    base_dir = "D:\src-py\pythonLearn\Bmooc\python网络爬虫与信息提取\week1"
+    file_dir = base_dir + '\download_resource'
+    if not os.path.exists(file_dir):
+        os.mkdir(file_dir)
+    file_name = url.split('/')[-1]
+    file_complete_path = file_dir + '/' + file_name
+    if os.path.exists(file_complete_path):
+        logging.error('文件[%s]已存在', file_complete_path)
+    else:
+        with open(file_complete_path, mode='xb') as fs:
+            fs.write(response.content)
+            fs.close()
+            logging.info("文件[%s]下载完成", file_name)
+
+
+download('http://tg.dili360.com/static/images/camry/KV-0602-3.jpg')
+download('http://img0.dili360.com/pic/2021/06/21/60d00c560d10a4c42494908_t.jpg@!rw9')
 
 req_param = {'account': '123', 'pwd': '123'}
 print(getHtmlText("https://baidu.com", req_param, req_param))

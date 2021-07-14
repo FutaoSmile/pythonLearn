@@ -21,6 +21,6 @@ def req_api(method, path, headers_param, **param):
         logging.info("请求地址:%s，请求耗时: %s", resp.url, time.time() - start_time)
 
 
-headers = {'X-Tenant-Id': 'snpas', 'Content-Type': 'application/json'}
+headers = {'X-Tenant-Id': 'snpas', 'Content-Type': 'application/json', 'User-Agent': ''}
 print(req_api('put', '/articles/top', headers, top=10,
               columnIds=('1409405513292070913', '1409405392911351809', '1409820342343450625', '1411959377681768449')))
